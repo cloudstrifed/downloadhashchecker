@@ -72,7 +72,7 @@ while True:
                         print("{:<30} {:<30}".format(k, str(v)))
                     print('')
                     if total_detections > 0:
-                        os.system(f"""sudo -u ghost64 rm -r '{filename}'""")
+                        os.system(f"""sudo -u user rm -r '{filename}'""")
                 else:
                     print("")
     
