@@ -20,15 +20,17 @@ beaf = 0
 
 while True:
     time.sleep(0.4)
-    folder_path = r'/home/user/Downloads'
-    file_type = '/**/*.*'
+    # Change <user> to your unix username
+    folder_path = r'/home/<user>'
+    file_type = '/**/*.???'
     files = glob.glob(folder_path + file_type, recursive=True)
     if files:
         max_file = max(files, key=os.path.getctime)
     
         if max_file != prev_file:
-            folder_path = r'/home/user/Downloads'
-            file_type = '/**/*.*'
+            # Change <user> to your unix username
+            folder_path = r'/home/<user>'
+            file_type = '/**/*.???'
             files = glob.glob(folder_path + file_type, recursive=True)
             max_file = max(files, key=os.path.getctime)
             prev_file = max_file
