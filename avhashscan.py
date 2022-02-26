@@ -21,7 +21,7 @@ beaf = 0
 while True:
     time.sleep(0.4)
     # Change <user> to your unix username
-    folder_path = r'/home/<user>'
+    folder_path = r'/home/<your-username>'
     file_type = '/**/*.???'
     files = glob.glob(folder_path + file_type, recursive=True)
     if files:
@@ -29,7 +29,7 @@ while True:
     
         if max_file != prev_file:
             # Change <user> to your unix username
-            folder_path = r'/home/<user>'
+            folder_path = r'/home/<your-username>'
             file_type = '/**/*.???'
             files = glob.glob(folder_path + file_type, recursive=True)
             max_file = max(files, key=os.path.getctime)
@@ -125,6 +125,7 @@ while True:
                         data = inputfile.read()
                         resultant = hashlib.sha256(data).hexdigest()
                         if hashlib.sha256(data).hexdigest():
+                            # you will need to register for a free VirusTotal account to get an API key here --> https://www.virustotal.com/gui/join-us 
                             data = vt_lookup(resultant, "Enter your VirusTotal API key here")
                         else:
                             parser.print_help()
