@@ -6,7 +6,7 @@ import json
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-VIRUSTOTAL_API_KEY = 'Enter your API Key Here'
+VIRUSTOTAL_API_KEY = 'Enter your API Key here'
 
 class FileHandler(FileSystemEventHandler):
 
